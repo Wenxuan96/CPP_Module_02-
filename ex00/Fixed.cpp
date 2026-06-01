@@ -1,38 +1,37 @@
 #include "Fixed.hpp"
 
-const int Fixed::fractionalBits = 8;  // must be initialized here
-
-Fixed::Fixed() : val(0)
+Fixed:: Fixed()
 {
-    std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
+	val = 0;
 }
 
-Fixed::Fixed(const Fixed& other)
+Fixed:: Fixed(const Fixed& other)
 {
-    std::cout << "Copy constructor called" << std::endl;
-    *this = other;
+	std::cout << "Copy constructor called" << std::endl;
+	val = other.val;
 }
 
-Fixed& Fixed::operator=(const Fixed& other)
+Fixed& Fixed:: operator=(const Fixed& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &other)
-        val = other.getRawBits();
-    return *this;
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)
+		val = other.getRawBits();
+	return *this;
 }
 
-Fixed::~Fixed()
+Fixed:: ~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
-    return val;
+	std::cout << "getRawBits member function called" << std::endl;
+	return val;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    val = raw;
+	val = raw;
 }

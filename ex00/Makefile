@@ -1,5 +1,5 @@
 # Compiler and flags
-NAME = fixed
+NAME = ex00
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra
 
