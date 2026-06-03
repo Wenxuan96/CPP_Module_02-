@@ -1,6 +1,5 @@
 #include "Point.hpp"
 
-
 Fixed crossProduct(Point const a, Point const b, Point const c)
 {
 	Fixed crossn((b.getX() - a.getX()) * (c.getY() - a.getY())
