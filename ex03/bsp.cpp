@@ -1,5 +1,6 @@
 #include "Point.hpp"
 
+// calculates which side of the line is the current point located at
 Fixed crossProduct(Point const a, Point const b, Point const c)
 {
 	Fixed crossn((b.getX() - a.getX()) * (c.getY() - a.getY())

@@ -43,7 +43,8 @@ float Fixed:: toFloat(void) const
 
 int Fixed:: toInt(void) const
 {
-	return val >> fractionalBits;
+	return roundf(toFloat());
+	//return val >> fractionalBits;
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)

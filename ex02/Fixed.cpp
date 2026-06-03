@@ -9,7 +9,8 @@ Fixed::Fixed(const int n)
 
 int Fixed:: toInt() const
 {
-	return val >> fractionalBits;
+	return roundf(toFloat());
+	//return val >> fractionalBits;
 }
 
 Fixed::Fixed(const float f)
@@ -87,14 +88,14 @@ Fixed Fixed::operator-(const Fixed& other) const
 Fixed Fixed::operator*(const Fixed& other) const
 {
 	Fixed newVal;
-    newVal.val = (this->val * other.val) >> fractionalBits;
+    newVal.val = static_cast<int>(static_cast<long long>(this->val) * other.val >> fractionalBits);
     return newVal;
 }
 
 Fixed Fixed::operator/(const Fixed& other) const
 {
 	Fixed newVal;
-    newVal.val = (this->val << fractionalBits) / other.val;
+    newVal.val = static_cast<int>((static_cast<long long>(this->val) << fractionalBits) / other.val);
     return newVal;
 }
 
